@@ -1,0 +1,342 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14410,        334]
+NotebookOptionsPosition[     13932,        313]
+NotebookOutlinePosition[     14280,        328]
+CellTagsIndexPosition[     14237,        325]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Napisz", " ", "program"}], ",", 
+    RowBox[{"wy\:015bwietlaj\:0105cy", " ", "graf"}], ",", 
+    RowBox[{
+    "w", " ", "kt\[OAcute]rym", " ", "po", " ", "klikni\:0119ciu", " ", "na", 
+     " ", "wierzcho\[LSlash]ek", " ", "zaznacza", " ", "si\:0119", " ", 
+     "otoczenie", " ", "rz\:0119du", " ", "2"}]}], "\[IndentingNewLine]", 
+   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"DynamicModule", "[", 
+    RowBox[{
+     RowBox[{"{", "graph", "}"}], ",", 
+     RowBox[{"Dynamic", "[", "graph", "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Initialization", "\[RuleDelayed]", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"graph", "=", 
+         RowBox[{"RandomGraph", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"30", ",", "50"}], "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"VertexLabels", "\[Rule]", "\"\<Name\>\""}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"VertexShapeFunction", "\[Rule]", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"EventHandler", "[", 
+               RowBox[{
+                RowBox[{"Disk", "[", 
+                 RowBox[{"#1", ",", ".1"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"\"\<MouseClicked\>\"", "\[RuleDelayed]", 
+                 RowBox[{"(", "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"PropertyValue", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"graph", ",", "#"}], "}"}], ",", 
+                    "GraphHighlight"}], "]"}], "=."}], "&"}], "/@", 
+                    RowBox[{"PropertyValue", "[", 
+                    RowBox[{"graph", ",", "GraphHighlight"}], "]"}]}], ";", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"graph", "=", 
+                    RowBox[{"HighlightGraph", "[", 
+                    RowBox[{"graph", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"NeighborhoodGraph", "[", 
+                    RowBox[{"graph", ",", "#2", ",", "2"}], "]"}], "}"}]}], 
+                    "]"}]}], ";"}], "\[IndentingNewLine]", ")"}]}]}], "]"}], 
+              "&"}], ")"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+       ")"}]}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.690434473443102*^9, 3.690434537428114*^9}, {
+   3.690434707801169*^9, 3.6904347217450294`*^9}, {3.6904348133354473`*^9, 
+   3.6904348838601465`*^9}, 3.690434948674925*^9, 3.690435860633952*^9, {
+   3.690436367244668*^9, 3.6904363759791355`*^9}, {3.690436407932601*^9, 
+   3.6904364307296805`*^9}, {3.6904365587817807`*^9, 3.690436570672531*^9}, {
+   3.690436663954782*^9, 3.6904367526276045`*^9}, {3.6904368107219768`*^9, 
+   3.6904368236283183`*^9}, {3.690436986083227*^9, 3.690437000520878*^9}, {
+   3.6904370433182116`*^9, 3.6904370776310806`*^9}, {3.6904371104283047`*^9, 
+   3.690437320633675*^9}, {3.6904374120006475`*^9, 3.6904374201257343`*^9}, {
+   3.690437459594908*^9, 3.6904374750325713`*^9}, {3.6904375363144746`*^9, 
+   3.6904375367676067`*^9}, {3.6904376351592817`*^9, 3.690437644300006*^9}, {
+   3.6904377121757298`*^9, 3.690437733863423*^9}, {3.6904378163487177`*^9, 
+   3.690437856114771*^9}, {3.6904379236171293`*^9, 3.690437928367498*^9}, {
+   3.6904379651015053`*^9, 3.6904380707032447`*^9}, {3.6904381075160933`*^9, 
+   3.690438220499319*^9}, {3.69043825345467*^9, 3.690438315254434*^9}, {
+   3.690438392712489*^9, 3.6904383934610023`*^9}, {3.6904384659066277`*^9, 
+   3.690438483656769*^9}, 3.690438547426088*^9, 3.6904385898671412`*^9, {
+   3.6904386361369057`*^9, 3.6904386366092534`*^9}, 3.690438679686744*^9, {
+   3.690438854013604*^9, 3.690438854982364*^9}, {3.6904388990141425`*^9, 
+   3.690438921764383*^9}, {3.69043908796929*^9, 3.6904391004225464`*^9}, 
+   3.690439174657714*^9, {3.690439206137591*^9, 3.690439243741236*^9}, {
+   3.6904392975553255`*^9, 3.690439297795495*^9}, {3.690439392077258*^9, 
+   3.6904394776568685`*^9}, {3.690439540188139*^9, 3.6904395418383074`*^9}, {
+   3.6904626239047785`*^9, 3.6904626489057574`*^9}, {3.690463067355688*^9, 
+   3.69046307935196*^9}, {3.6904634573784695`*^9, 3.6904634802489715`*^9}, {
+   3.6904635257575097`*^9, 3.6904635594808083`*^9}, 3.6904638852835236`*^9, 
+   3.690463974576062*^9, {3.6904642473017883`*^9, 3.6904642607942476`*^9}, {
+   3.6904643336099024`*^9, 3.6904643341581173`*^9}, {3.6904643648483143`*^9, 
+   3.6904644702059674`*^9}, {3.6904645518944883`*^9, 3.6904645848541393`*^9}}],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`graph$$ = 
+  Graph[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 
+   20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30}, {Null, 
+    SparseArray[
+    Automatic, {30, 30}, 0, {
+     1, {{0, 4, 8, 11, 16, 21, 23, 28, 31, 33, 37, 38, 41, 45, 50, 53, 56, 57,
+        58, 61, 64, 68, 72, 75, 76, 80, 84, 87, 90, 95, 100}, {{2}, {22}, {
+       29}, {30}, {1}, {19}, {25}, {29}, {14}, {15}, {17}, {5}, {16}, {25}, {
+       26}, {30}, {4}, {13}, {18}, {19}, {22}, {14}, {21}, {10}, {12}, {25}, {
+       27}, {28}, {19}, {20}, {26}, {13}, {22}, {7}, {15}, {21}, {29}, {29}, {
+       7}, {14}, {25}, {5}, {9}, {14}, {30}, {3}, {6}, {12}, {13}, {21}, {
+       3}, {10}, {30}, {4}, {20}, {23}, {3}, {5}, {2}, {5}, {8}, {8}, {16}, {
+       21}, {6}, {10}, {14}, {20}, {1}, {5}, {9}, {30}, {16}, {26}, {27}, {
+       28}, {2}, {4}, {7}, {12}, {4}, {8}, {23}, {27}, {7}, {23}, {26}, {7}, {
+       24}, {29}, {1}, {2}, {10}, {11}, {28}, {1}, {4}, {13}, {15}, {22}}}, 
+      Pattern}]}, {
+   VertexLabels -> {"Name"}, VertexShapeFunction -> {EventHandler[
+       Disk[#, 0.1], "MouseClicked" :> (Unset[
+          
+          PropertyValue[{$CellContext`graph$$, #}, 
+           GraphHighlight]]& ; $CellContext`graph$$ = 
+         HighlightGraph[$CellContext`graph$$, {
+            NeighborhoodGraph[$CellContext`graph$$, #2, 2]}]; Null)]& }, 
+    GraphHighlight -> {22, 
+      UndirectedEdge[4, 16], 
+      UndirectedEdge[14, 21], 
+      UndirectedEdge[7, 10], 1, 28, 16, 
+      UndirectedEdge[13, 14], 
+      UndirectedEdge[7, 12], 3, 
+      UndirectedEdge[4, 25], 
+      UndirectedEdge[7, 28], 
+      UndirectedEdge[15, 30], 
+      UndirectedEdge[1, 30], 
+      UndirectedEdge[8, 26], 21, 
+      UndirectedEdge[6, 21], 
+      UndirectedEdge[27, 7], 4, 
+      UndirectedEdge[5, 18], 14, 
+      UndirectedEdge[5, 22], 
+      UndirectedEdge[13, 5], 5, 10, 
+      UndirectedEdge[27, 23], 
+      UndirectedEdge[12, 25], 26, 
+      UndirectedEdge[22, 30], 
+      UndirectedEdge[23, 26], 
+      UndirectedEdge[4, 26], 
+      UndirectedEdge[27, 26], 6, 18, 15, 25, 
+      UndirectedEdge[13, 30], 
+      UndirectedEdge[13, 9], 27, 
+      UndirectedEdge[3, 15], 
+      UndirectedEdge[7, 25], 
+      UndirectedEdge[1, 22], 9, 
+      UndirectedEdge[12, 14], 
+      UndirectedEdge[4, 30], 13, 7, 23, 
+      UndirectedEdge[9, 22], 
+      UndirectedEdge[16, 23], 8, 
+      UndirectedEdge[6, 14], 19, 12, 
+      UndirectedEdge[4, 5], 
+      UndirectedEdge[5, 19], 
+      UndirectedEdge[3, 14], 30}}]}, 
+  DynamicBox[ToBoxes[$CellContext`graph$$, StandardForm],
+   ImageSizeCache->{360., {136., 142.}}],
+  DynamicModuleValues:>{},
+  Initialization:>($CellContext`graph$$ = 
+    RandomGraph[{30, 50}, VertexLabels -> "Name", 
+      VertexShapeFunction -> (EventHandler[
+        Disk[#, 0.1], "MouseClicked" :> (Unset[
+           
+           PropertyValue[{$CellContext`graph$$, #}, 
+            GraphHighlight]]& ; $CellContext`graph$$ = 
+          HighlightGraph[$CellContext`graph$$, {
+             NeighborhoodGraph[$CellContext`graph$$, #2, 2]}]; Null)]& )]; 
+   Null)]], "Output",
+ CellChangeTimes->{
+  3.6904395574664307`*^9, {3.690463069327668*^9, 3.69046308033952*^9}, {
+   3.690463533623144*^9, 3.6904635607518587`*^9}, {3.690464230783845*^9, 
+   3.6904642625528483`*^9}, {3.690464336639138*^9, 3.690464470716267*^9}, {
+   3.690464558314456*^9, 3.690464572476963*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Napisz", " ", "graf"}], ",", 
+    RowBox[{
+    "w", " ", "kt\[OAcute]rym", " ", "wierzcho\[LSlash]ek", " ", "znika", " ",
+      "po", " ", "klikni\:0119ciu", " ", "na", " ", "niego", " ", "lewym", 
+     " ", "przyciskiem", " ", 
+     RowBox[{"myszy", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"UsunWierzcholek", "[", 
+      RowBox[{"graph_", ",", "vertex_"}], "]"}], ":=", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"coords", ",", 
+         RowBox[{"vertices", "=", 
+          RowBox[{"VertexList", "[", "graph", "]"}]}]}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"coords", "=", 
+         RowBox[{
+          RowBox[{"DeleteCases", "[", 
+           RowBox[{"vertices", ",", "vertex"}], "]"}], "/.", 
+          RowBox[{"Thread", "[", 
+           RowBox[{"vertices", "\[Rule]", 
+            RowBox[{"GraphEmbedding", "[", "graph", "]"}]}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Graph", "[", 
+         RowBox[{
+          RowBox[{"VertexDelete", "[", 
+           RowBox[{"graph", ",", "vertex"}], "]"}], ",", 
+          RowBox[{"VertexCoordinates", "\[Rule]", "coords"}]}], "]"}]}]}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"DynamicModule", "[", 
+    RowBox[{
+     RowBox[{"{", "graph", "}"}], ",", 
+     RowBox[{"Dynamic", "[", "graph", "]"}], ",", 
+     RowBox[{"Initialization", "\[RuleDelayed]", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"graph", "=", 
+         RowBox[{"Graph", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"1", "\[Rule]", "2"}], ",", 
+             RowBox[{"2", "\[Rule]", "3"}], ",", 
+             RowBox[{"2", "\[Rule]", "4"}], ",", 
+             RowBox[{"4", "\[Rule]", "5"}], ",", 
+             RowBox[{"5", "\[Rule]", "1"}], ",", " ", 
+             RowBox[{"3", "\[Rule]", "1"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"VertexLabels", "\[Rule]", "\"\<Name\>\""}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"VertexShapeFunction", "\[Rule]", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"EventHandler", "[", 
+               RowBox[{
+                RowBox[{"Disk", "[", 
+                 RowBox[{"#1", ",", ".2"}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"\"\<MouseClicked\>\"", "\[RuleDelayed]", 
+                 RowBox[{"(", 
+                  RowBox[{"graph", "=", 
+                   RowBox[{"UsunWierzcholek", "[", 
+                    RowBox[{"graph", ",", "#2"}], "]"}]}], ")"}]}]}], "]"}], 
+              "&"}], ")"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
+       ")"}]}]}], "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{
+  3.6904345207561035`*^9, {3.6904351742155304`*^9, 3.6904351955686088`*^9}, {
+   3.6904352496849384`*^9, 3.6904352819594445`*^9}, {3.690435326475587*^9, 
+   3.6904354111952405`*^9}, {3.6904354818053713`*^9, 3.690435513196331*^9}, {
+   3.690435544587288*^9, 3.690435572743786*^9}, {3.690435760351633*^9, 
+   3.6904357823987403`*^9}, {3.6904359618537865`*^9, 
+   3.6904359759164343`*^9}, {3.6904360144949713`*^9, 3.690436018604393*^9}, {
+   3.69043612404298*^9, 3.6904361243398976`*^9}, {3.6904361740279307`*^9, 
+   3.690436187887453*^9}, {3.6904362550287957`*^9, 3.690436258403833*^9}}],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`graph$$ = 
+  Graph[{2, 3, 4, 5}, {{{1, 2}, {1, 3}, {3, 4}}, Null}, {
+   GraphLayout -> {"Dimension" -> 2}, 
+    VertexCoordinates -> {{1.080274652327867, 0.03610426260486449}, {
+     1.9447804337527974`, 0.487041910854196}, {0., 0.}, {
+     0.00013661436467882204`, 0.9741398489187154}}, 
+    VertexLabels -> {"Name", 1 -> None}, VertexShapeFunction -> {EventHandler[
+       Disk[#, 0.2], 
+       "MouseClicked" :> ($CellContext`graph$$ = \
+$CellContext`UsunWierzcholek[$CellContext`graph$$, #2])]& , 1 -> 
+      Automatic}}]}, 
+  DynamicBox[ToBoxes[$CellContext`graph$$, StandardForm],
+   ImageSizeCache->{360., {105., 112.}}],
+  DynamicModuleValues:>{},
+  Initialization:>($CellContext`graph$$ = 
+    Graph[{1 -> 2, 2 -> 3, 2 -> 4, 4 -> 5, 5 -> 1, 3 -> 1}, VertexLabels -> 
+      "Name", VertexShapeFunction -> (EventHandler[
+        Disk[#, 0.2], 
+        "MouseClicked" :> ($CellContext`graph$$ = \
+$CellContext`UsunWierzcholek[$CellContext`graph$$, #2])]& )]; 
+   Null)]], "Output",
+ CellChangeTimes->{3.6904647287811356`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"2", " ", "pkt"}], ")"}], " ", "Napisz", " ", "prototyp", " ", 
+    "gry", " ", "w", " ", 
+    RowBox[{"czo\[LSlash]gi", ":", "gracz"}]}], ",", 
+   RowBox[{
+   "reguluje", " ", "strza\[LSlash]kami", " ", "k\:0105t", " ", "i", " ", 
+    "si\[LSlash]\:0119", " ", "strza\[LSlash]u"}], ",", 
+   RowBox[{
+   "a", " ", "po", " ", "naci\:015bni\:0119ciu", " ", "spacji", " ", 
+    "pojawia", " ", "si\:0119", " ", "tor", " ", "lotu", " ", 
+    RowBox[{"pocisku", ".", "Uwzgl\:0119dnij"}], " ", "op\[OAcute]r", " ", 
+    "powietrza"}]}], "*)"}]], "Input"]
+},
+WindowSize->{707, 636},
+WindowMargins->{{312, Automatic}, {62, Automatic}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4730, 85, 480, "Input"],
+Cell[5313, 109, 3405, 76, 293, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8755, 190, 3446, 79, 423, "Input"],
+Cell[12204, 271, 1077, 22, 232, "Output"]
+}, Open  ]],
+Cell[13296, 296, 632, 15, 69, "Input"]
+}
+]
+*)
+
